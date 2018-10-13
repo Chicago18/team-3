@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 13, 2018 at 01:56 PM
+-- Generation Time: Oct 13, 2018 at 04:13 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.8
 
@@ -55,6 +55,36 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 (1, 'teacher', 'teachers'),
 (2, 'students', 'Students'),
 (3, 'parent', 'Parents of the Students');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `intakeForm`
+--
+
+CREATE TABLE `intakeForm` (
+  `firstName` varchar(265) NOT NULL,
+  `lastName` varchar(265) NOT NULL,
+  `phone` varchar(265) NOT NULL,
+  `address` varchar(265) NOT NULL,
+  `ethnicity` varchar(265) NOT NULL,
+  `gender` varchar(265) NOT NULL,
+  `age` varchar(265) NOT NULL,
+  `birthdate` varchar(265) NOT NULL,
+  `currentGrade` varchar(265) NOT NULL,
+  `school` varchar(265) NOT NULL,
+  `disabled` varchar(265) NOT NULL,
+  `communityArea` varchar(265) NOT NULL,
+  `ward` varchar(265) NOT NULL,
+  `familyType` varchar(265) NOT NULL,
+  `housingStatus` varchar(265) NOT NULL,
+  `foodStamps` varchar(265) NOT NULL,
+  `reducedLunch` varchar(265) NOT NULL,
+  `healthInsurance` varchar(265) NOT NULL,
+  `incomeSource` varchar(265) NOT NULL,
+  `referral` varchar(265) NOT NULL,
+  `clientID` varchar(265) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -151,9 +181,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1539429553, 1, 'Admin', 'istrator', '0'),
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1539441322, 1, 'Admin', 'istrator', '0'),
 (2, '::1', 'csegarce@hawk.iit.edu', '$2y$08$dg4.fH0eiz1QNxoFCNrfFu.I61leNG7Jy8yu7HZ19P1ivsMhMYH9u', NULL, 'csegarce@hawk.iit.edu', NULL, NULL, NULL, NULL, 1539411011, 1539431725, 1, 'Calin', 'Segarceanu', '3129276097'),
-(3, '::1', 'csegarc22e@hawk.iit.edu', '$2y$08$S0pSTCd9q5YJB6GaXmHU6.Tf1/T.3PAj0wwNvoPy6pLuPbX4v1ApG', NULL, 'csegarc22e@hawk.iit.edu', NULL, NULL, NULL, NULL, 1539411154, 1539431984, 1, 'Calin23', 'Segarceanu232', '3129276098');
+(3, '::1', 'csegarc22e@hawk.iit.edu', '$2y$08$S0pSTCd9q5YJB6GaXmHU6.Tf1/T.3PAj0wwNvoPy6pLuPbX4v1ApG', NULL, 'csegarc22e@hawk.iit.edu', NULL, NULL, NULL, NULL, 1539411154, 1539443015, 1, 'Calin23', 'Segarceanu232', '3129276098');
 
 -- --------------------------------------------------------
 
