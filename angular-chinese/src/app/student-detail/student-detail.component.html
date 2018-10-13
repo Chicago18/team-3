@@ -1,3 +1,15 @@
 <p>
   student-detail works!
 </p>
+
+<div *ngIf="student">
+
+  <h2>{{student.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{student.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="student.name" placeholder="name">
+    </label>
+  </div>
+
+</div>

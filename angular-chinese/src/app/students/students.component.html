@@ -8,14 +8,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedStudent">
-
-  <h2>{{selectedStudent.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedStudent.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedStudent.name" placeholder="name">
-    </label>
-  </div>
-
-</div>
+<app-student-detail [student]="selectedStudent"></app-student-detail>
