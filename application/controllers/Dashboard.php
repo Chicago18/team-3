@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller {
   {
     parent::__construct();
     $this->load->library('grocery_CRUD');
+    $this->load->model('helper');
   }
 
   public function index(){
@@ -28,7 +29,9 @@ class Dashboard extends CI_Controller {
     }else if($this->ion_auth->is_student()){
       $this->load->view('elements/student_nav');
     }else if($this->ion_auth->is_parent()){
+      $data = array('title' => "Enrollment Form");
       $this->load->view('elements/parent_nav');
+      $this->load->view('dashboard/iframeenrollment', $data);
     }
   }
 
@@ -110,6 +113,51 @@ class Dashboard extends CI_Controller {
       $this->load->view('elements/teacher_nav');
       $this->load->view('dashboard/teacher-main', $data);
       $this->load->view('elements/footer');
+    }
+  }
+
+  public function worksheets(){
+    if (!$this->ion_auth->logged_in())
+    {
+      // redirect them to the dashboard
+      redirect('auth/', 'refresh');
+    }if($this->ion_auth->is_teacher()){
+
+      $crud = new grocery_CRUD();
+
+			$crud->set_theme('flexigrid');
+			$crud->set_table('worksheet');
+			$crud->set_subject('Worksheet');
+
+      $crud->columns('title','description');
+      $crud->fields('title','description');
+
+      $output = $crud->render();
+
+      $data = array(
+        'worksheets' => $this->helper->getWorksheets(),
+        'title' => "Worksheets",
+        'output' => $output
+      );
+
+      $this->load->view('elements/header');
+      $this->load->view('elements/teacher_nav');
+      $this->load->view('dashboard/teacher-main', $data);
+      $this->load->view('elements/footer');
+    }
+  }
+
+  public function worksheet($worksheet_id){
+    $this->load->view('dashboard/enrollment_form', $data);
+  }
+
+  public function getEnrollmentForm(){
+    if (!$this->ion_auth->logged_in())
+    {
+      // redirect them to the dashboard
+      redirect('auth/', 'refresh');
+    }if($this->ion_auth->is_parent()){
+      $this->load->view('dashboard/enrollment_form');
     }
   }
 }
