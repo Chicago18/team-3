@@ -23,7 +23,7 @@ class Dashboard extends CI_Controller {
       $data = array('output' => $output, 'title' => "Welcome back");
 
       $this->load->view('elements/teacher_nav');
-      $this->load->view('dashboard/teacher-main', $data);
+      $this->load->view('dashboard/teacher-index', $data);
       $this->load->view('elements/footer');
 
     }else if($this->ion_auth->is_student()){
@@ -32,6 +32,7 @@ class Dashboard extends CI_Controller {
       $data = array('title' => "Enrollment Form");
       $this->load->view('elements/parent_nav');
       $this->load->view('dashboard/iframeenrollment', $data);
+      $this->load->view('elements/footer');
     }
   }
 

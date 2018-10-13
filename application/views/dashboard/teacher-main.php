@@ -10,7 +10,7 @@
       <li class="breadcrumb-item active"><?php echo $title; ?></li>
     </ol>
     <?php
-    if($worksheets != null){
+    if(isset($worksheets)){
         foreach($worksheets as $worksheet){
           ?>
            <a href="<?php echo $worksheet['id'] ?>">

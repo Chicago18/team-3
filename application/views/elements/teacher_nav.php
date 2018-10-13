@@ -2,7 +2,7 @@
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="index.html">Teacher Dashboard</a>
+		<a class="navbar-brand mr-1" href="<?php echo base_url()?>dashboard/index">Teacher Dashboard</a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
 			<i class="fas fa-bars"></i>
@@ -28,10 +28,9 @@
 					<span class="badge badge-danger">9+</span>
 				</a>
 				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-					<a class="dropdown-item" href="#">Action</a>
-					<a class="dropdown-item" href="#">Another action</a>
+					<a class="dropdown-item" href="#">Jump to</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Something else here</a>
+					<a class="dropdown-item" href="#">Postpone 1 hour</a>
 				</div>
 			</li>
 			<li class="nav-item dropdown no-arrow mx-1">
@@ -40,10 +39,7 @@
 					<span class="badge badge-danger">7</span>
 				</a>
 				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-					<a class="dropdown-item" href="#">Action</a>
-					<a class="dropdown-item" href="#">Another action</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Something else here</a>
+					<a class="dropdown-item" href="#">Mark as read</a>
 				</div>
 			</li>
 			<li class="nav-item dropdown no-arrow">
@@ -77,15 +73,5 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="<?php echo base_url()?>dashboard/worksheets">List of Worksheets</a>
 				</div>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="charts.html">
-					<i class="fas fa-fw fa-chart-area"></i>
-					<span>Charts</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="tables.html">
-					<i class="fas fa-fw fa-table"></i>
-					<span>Tables</span></a>
 			</li>
 		</ul>
