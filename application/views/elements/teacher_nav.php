@@ -1,12 +1,3 @@
-<?php
-foreach($css_files as $file): ?>
-    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
-
-<?php endforeach; ?>
-<?php foreach($js_files as $file): ?>
-
-    <script src="<?php echo $file; ?>"></script>
-<?php endforeach; ?>
 <body id="page-top">
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -73,26 +64,18 @@ foreach($css_files as $file): ?>
 
 		<!-- Sidebar -->
 		<ul class="sidebar navbar-nav">
-			<li class="nav-item active">
-				<a class="nav-link" href="index.html">
-					<i class="fas fa-fw fa-tachometer-alt"></i>
-					<span>Dashboard</span>
-				</a>
-			</li>
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="fas fa-fw fa-folder"></i>
-					<span>Pages</span>
+					<span>Worksheets</span>
 				</a>
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
-					<h6 class="dropdown-header">Login Screens:</h6>
-					<a class="dropdown-item" href="login.html">Login</a>
-					<a class="dropdown-item" href="register.html">Register</a>
-					<a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+					<h6 class="dropdown-header">Components</h6>
+					<a class="dropdown-item" href="<?php echo base_url()?>dashboard/topics">Topics</a>
+					<a class="dropdown-item" href="register.html">Level of Education</a>
+					<a class="dropdown-item" href="forgot-password.html">Questions</a>
 					<div class="dropdown-divider"></div>
-					<h6 class="dropdown-header">Other Pages:</h6>
-					<a class="dropdown-item" href="404.html">404 Page</a>
-					<a class="dropdown-item" href="blank.html">Blank Page</a>
+					<a class="dropdown-item" href="404.html">List of Worksheets</a>
 				</div>
 			</li>
 			<li class="nav-item">
@@ -106,5 +89,3 @@ foreach($css_files as $file): ?>
 					<span>Tables</span></a>
 			</li>
 		</ul>
-
-		<?php  echo $output; ?>
