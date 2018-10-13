@@ -55,7 +55,61 @@ class Dashboard extends CI_Controller {
       $this->load->view('elements/teacher_nav');
       $this->load->view('dashboard/teacher-main', $data);
       $this->load->view('elements/footer');
+    }
+  }
 
+  public function level(){
+    if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the dashboard
+      redirect('auth/', 'refresh');
+		}
+
+    if($this->ion_auth->is_teacher()){
+
+      $crud = new grocery_CRUD();
+
+			$crud->set_theme('flexigrid');
+			$crud->set_table('educationLevel');
+			$crud->set_subject('Education Level');
+
+      $output = $crud->render();
+
+      $data = array('output' => $output, 'title' => "Level of Education");
+
+      $this->load->view('elements/header');
+      $this->load->view('elements/teacher_nav');
+      $this->load->view('dashboard/teacher-main', $data);
+      $this->load->view('elements/footer');
+    }
+  }
+
+  public function questions(){
+    if (!$this->ion_auth->logged_in())
+		{
+			// redirect them to the dashboard
+      redirect('auth/', 'refresh');
+		}
+
+    if($this->ion_auth->is_teacher()){
+
+      $crud = new grocery_CRUD();
+
+			$crud->set_theme('flexigrid');
+			$crud->set_table('questions');
+			$crud->set_subject('Question');
+      $crud->set_relation('level_id','educationLevel','educationLevel');
+      $crud->set_relation('topic_id','topics','topic');
+      $crud->display_as('level_id','Level of Education')->display_as('topic_id','Topic');
+
+      $output = $crud->render();
+
+      $data = array('output' => $output, 'title' => "Questions");
+
+      $this->load->view('elements/header');
+      $this->load->view('elements/teacher_nav');
+      $this->load->view('dashboard/teacher-main', $data);
+      $this->load->view('elements/footer');
     }
   }
 }

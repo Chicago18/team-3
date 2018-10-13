@@ -72,8 +72,8 @@
 				<div class="dropdown-menu" aria-labelledby="pagesDropdown">
 					<h6 class="dropdown-header">Components</h6>
 					<a class="dropdown-item" href="<?php echo base_url()?>dashboard/topics">Topics</a>
-					<a class="dropdown-item" href="register.html">Level of Education</a>
-					<a class="dropdown-item" href="forgot-password.html">Questions</a>
+					<a class="dropdown-item" href="<?php echo base_url()?>dashboard/level">Level of Education</a>
+					<a class="dropdown-item" href="<?php echo base_url()?>dashboard/questions">Questions</a>
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="404.html">List of Worksheets</a>
 				</div>
