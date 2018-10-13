@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
 import { FormsModule } from '@angular/forms';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
-	declarations: [ AppComponent, StudentsComponent, StudentDetailComponent ],
-	imports: [ BrowserModule, FormsModule ],
+	declarations: [ AppComponent, StudentsComponent, StudentDetailComponent, MessagesComponent ],
+	imports: [ BrowserModule, FormsModule, AppRoutingModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]
 })
