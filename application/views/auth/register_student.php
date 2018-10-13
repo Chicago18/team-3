@@ -101,6 +101,9 @@
 
 <?php echo form_close();?>
 
+</form>
+
+
 
 </div>
 </div>
@@ -113,3 +116,4 @@
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 </body>
+</html>

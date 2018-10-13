@@ -234,7 +234,7 @@ class Auth extends CI_Controller {
       // check to see if we are creating the user
       // redirect them back to the teacher page
       $this->session->set_flashdata('message', $this->ion_auth->messages());
-      redirect("auth/login_parent", 'refresh');
+      redirect("auth/login", 'refresh');
     }
     else
     {
@@ -284,7 +284,7 @@ class Auth extends CI_Controller {
         'type' => 'password',
         'value' => $this->form_validation->set_value('password_confirm'),
       );
-
+$this->load->view('elements/header');
       $this->_render_page('auth' . DIRECTORY_SEPARATOR . 'register_parent', $this->data);
     }
   }
