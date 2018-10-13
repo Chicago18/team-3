@@ -5,11 +5,9 @@ class Auth extends CI_Controller {
 
   public function __construct(){
     parent::__construct();
-    $this->config->set_item('language', 'romanian');
-
     $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
-
-    $this->lang->load('auth_lang');
+    $this->config->item('language');
+    $this->lang->load('auth_lang', $this->session->language);
 
   }
 
@@ -21,6 +19,13 @@ class Auth extends CI_Controller {
 
     $this->load->view("elements/header");
     $this->load->view("auth/index");
+  }
+
+  public function select_language(){
+    $language = $this->input->post('lang');
+    str_replace('"', '', $language);
+    $this->session->language = $language;
+    $this->config->set_item('language', $language);
   }
 
   public function login(){
@@ -87,11 +92,6 @@ class Auth extends CI_Controller {
     }
 
     $this->data['title'] = $this->lang->line('create_user_heading') . " Student";
-
-    if (!$this->ion_auth->logged_in())
-    {
-      redirect('auth', 'refresh');
-    }
 
     $tables = $this->config->item('tables', 'ion_auth');
     $identity_column = $this->config->item('identity', 'ion_auth');
@@ -195,11 +195,6 @@ class Auth extends CI_Controller {
     }
 
     $this->data['title'] = $this->lang->line('create_user_heading') . " Parent";
-
-    if (!$this->ion_auth->logged_in())
-    {
-      redirect('auth', 'refresh');
-    }
 
     $tables = $this->config->item('tables', 'ion_auth');
     $identity_column = $this->config->item('identity', 'ion_auth');

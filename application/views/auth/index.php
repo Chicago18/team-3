@@ -18,12 +18,44 @@
   			</p>
 		<div>
   <h1> <font color: "black"> Please pick a language: </font> </h1>
-  <select>
-    <option value="English">English</option>
-    <option value="Chinese">Chinese</option>
-    <option value="Spanish">Spanish</option>
-    <option value="Vietnamese">Vietnamese</option>
-
+  <select id="language">
+		<option value="arabic">Arabic</option>
+		<option value="bengali">Bengali</option>
+		<option value="bulgarian">Bulgarian</option>
+		<option value="catalan">Catalan</option>
+		<option value="croatian">Croatian</option>
+		<option value="czech">Czech</option>
+		<option value="danish">Danish</option>
+		<option value="dutch">Dutch</option>
+		<option value="english">English</option>
+		<option value="estonian">Estonian</option>
+		<option value="filipino">Filipino</option>
+		<option value="finnish">Finnish</option>
+		<option value="french">French</option>
+		<option value="german">German</option>
+		<option value="greek">Greek</option>
+		<option value="hungarian">Hungarian</option>
+		<option value="indonesian">Indonesian</option>
+		<option value="italian">Italian</option>
+		<option value="japanese">Japanese</option>
+		<option value="korean">Korean</option>
+		<option value="lithuanian">Lithuanian</option>
+		<option value="norwegian">Norwegian</option>
+		<option value="persian">Persian</option>
+		<option value="pirate">Pirate</option>
+		<option value="polish">Polish</option>
+		<option value="portuguese">Portuguese</option>
+		<option value="romanian">Romanian</option>
+		<option value="russian">Russian</option>
+		<option value="slovak">Slovak</option>
+		<option value="spanish">Spanish</option>
+		<option value="swedish">Swedish</option>
+		<option value="thai">Thai</option>
+		<option value="turkish">Turkish</option>
+		<option value="ukrainian">Ukrainian</option>
+		<option value="vietnamese">Vietnamese</option>
+		<option value="zh_cn">Zh Chinese</option>
+		<option value="zh_tw">Zh tw</option>
   </select>
 
   <table style="margin-top:1.5%">
@@ -36,5 +68,23 @@
 
 </head>
 </html>
-
-<p><?php echo anchor('auth/create_user', lang('index_create_user_link'))?> | <?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
+<script type="text/javascript">
+// Ajax post
+$(document).ready(function() {
+	$("#language").change(function() {
+		const language = $("#language").val();
+		jQuery.ajax({
+			type: "POST",
+			url: "<?php echo base_url(); ?>" + "auth/select_language",
+			data: {
+				lang: language
+			},
+			success: function(res) {
+				if (res){
+					console.log(res);
+				}
+			},
+		});
+});
+});
+</script>
