@@ -1,3 +1,12 @@
+<?php
+foreach($css_files as $file): ?>
+    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+
+<?php endforeach; ?>
+<?php foreach($js_files as $file): ?>
+
+    <script src="<?php echo $file; ?>"></script>
+<?php endforeach; ?>
 <body id="page-top">
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -97,3 +106,5 @@
 					<span>Tables</span></a>
 			</li>
 		</ul>
+
+		<?php  echo $output; ?>
