@@ -1,0 +1,45 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Oct 13, 2018 at 04:16 PM
+-- Server version: 5.6.35
+-- PHP Version: 7.1.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `cmaa`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `intakeForm`
+--
+
+CREATE TABLE `intakeForm` (
+  `firstName` varchar(265) NOT NULL,
+  `lastName` varchar(265) NOT NULL,
+  `phone` varchar(265) NOT NULL,
+  `address` varchar(265) NOT NULL,
+  `ethnicity` varchar(265) NOT NULL,
+  `gender` varchar(265) NOT NULL,
+  `age` varchar(265) NOT NULL,
+  `birthdate` varchar(265) NOT NULL,
+  `currentGrade` varchar(265) NOT NULL,
+  `school` varchar(265) NOT NULL,
+  `disabled` varchar(265) NOT NULL,
+  `communityArea` varchar(265) NOT NULL,
+  `ward` varchar(265) NOT NULL,
+  `familyType` varchar(265) NOT NULL,
+  `housingStatus` varchar(265) NOT NULL,
+  `foodStamps` varchar(265) NOT NULL,
+  `reducedLunch` varchar(265) NOT NULL,
+  `healthInsurance` varchar(265) NOT NULL,
+  `incomeSource` varchar(265) NOT NULL,
+  `referral` varchar(265) NOT NULL,
+  `clientID` varchar(265) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
