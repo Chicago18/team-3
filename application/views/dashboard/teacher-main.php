@@ -9,7 +9,15 @@
       </li>
       <li class="breadcrumb-item active"><?php echo $title; ?></li>
     </ol>
-
+    <?php
+    if(isset($worksheets)){
+        foreach($worksheets as $worksheet){
+          ?>
+           <a href="<?php echo $worksheet['id'] ?>">
+          <?php
+        }
+    }
+    ?>
     <!-- Page Content -->
     <?php if($output != null){ ?>
       <?php
@@ -21,7 +29,7 @@
       <?php endforeach; ?>
       <?php echo $output->output; ?>
     <?php
-    }
+  }
     ?>
   </div>
   <!-- /.container-fluid -->
